@@ -1,0 +1,11 @@
+{
+  "name": "verndale-agentics-marketplace",
+  "plugins": [
+    {
+      "name": "verndale-agentics",
+      "version": "1.0.0",
+      "description": "Salesforce B2B Commerce migration analysis — gap analysis pipelines, meeting review, batch enrichment, video analysis, and documentation generation for Claude Code",
+      "source": "."
+    }
+  ]
+}
