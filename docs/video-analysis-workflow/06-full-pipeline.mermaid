@@ -1,0 +1,133 @@
+---
+title: "Verndale AI-Powered Migration Analysis — Full Pipeline (Option F)"
+---
+graph TD
+    %% ============================================================
+    %% STYLING
+    %% ============================================================
+    classDef input fill:#2D2D2D,stroke:#FFB800,color:#FFB800,stroke-width:2px,font-weight:bold
+    classDef phase0 fill:#FFF3CD,stroke:#D4A017,color:#5C4800,stroke-width:2px
+    classDef phase1 fill:#CCE5FF,stroke:#0056B3,color:#003366,stroke-width:2px
+    classDef phase1synth fill:#99CAFF,stroke:#0056B3,color:#003366,stroke-width:2px,font-weight:bold
+    classDef phase2 fill:#D4EDDA,stroke:#155724,color:#155724,stroke-width:2px
+    classDef phase2key fill:#A3D9B1,stroke:#155724,color:#155724,stroke-width:2px,font-weight:bold
+    classDef phase25 fill:#F8D7DA,stroke:#842029,color:#58151C,stroke-width:2px
+    classDef phase3 fill:#E2D9F3,stroke:#6F42C1,color:#3D1F6E,stroke-width:2px
+    classDef output fill:#1E3A5F,stroke:#FFB800,color:#FFFFFF,stroke-width:2px,font-weight:bold
+    classDef legend fill:#F5F5F5,stroke:#999,color:#333,stroke-width:1px
+
+    %% ============================================================
+    %% INPUT
+    %% ============================================================
+    VIDEO["🎬 Raw Video Recording<br/><i>.mp4 / .mov</i>"]:::input
+
+    %% ============================================================
+    %% PHASE 0 — PREPROCESSING
+    %% ============================================================
+    subgraph PHASE_0 ["Phase 0 — Preprocessing"]
+        direction TB
+        P0_EXTRACT["P1: Video Frame Extractor<br/><i>ffmpeg → PNG frames + AAC audio</i><br/><b>manifest.json</b>"]:::phase0
+        P0_DEDUP["P2: Frame Deduplicator<br/><i>dhash perceptual hashing</i><br/><b>~55% frame reduction</b>"]:::phase0
+        P0_TRANSCRIBE["P3: Audio Transcriber<br/><i>ElevenLabs Scribe v2</i><br/><b>Speaker-diarized transcript</b>"]:::phase0
+    end
+
+    VIDEO --> P0_EXTRACT
+    P0_EXTRACT --> P0_DEDUP
+    P0_EXTRACT -.->|"full_audio.aac<br/>(parallel)"| P0_TRANSCRIBE
+    P0_DEDUP -->|"updated manifest<br/>unique frames only"| PHASE_1_ANCHOR
+
+    %% ============================================================
+    %% PHASE 1 — PARALLEL FRAME ANALYSIS
+    %% ============================================================
+    subgraph PHASE_1 ["Phase 1 — Parallel Frame Analysis"]
+        direction TB
+        PHASE_1_ANCHOR[" "]
+        style PHASE_1_ANCHOR fill:none,stroke:none,height:0
+
+        subgraph CHUNKS ["5 Parallel Frame Analyst Agents"]
+            direction LR
+            FA1["Chunk 1<br/><i>~19 frames</i>"]:::phase1
+            FA2["Chunk 2<br/><i>~19 frames</i>"]:::phase1
+            FA3["Chunk 3<br/><i>~19 frames</i>"]:::phase1
+            FA4["Chunk 4<br/><i>~19 frames</i>"]:::phase1
+            FA5["Chunk 5<br/><i>~19 frames</i>"]:::phase1
+        end
+
+        P1_SYNTH["Frame Synthesizer<br/><i>Merge + deduplicate</i>"]:::phase1synth
+    end
+
+    PHASE_1_ANCHOR --> FA1
+    PHASE_1_ANCHOR --> FA2
+    PHASE_1_ANCHOR --> FA3
+    PHASE_1_ANCHOR --> FA4
+    PHASE_1_ANCHOR --> FA5
+
+    FA1 --> P1_SYNTH
+    FA2 --> P1_SYNTH
+    FA3 --> P1_SYNTH
+    FA4 --> P1_SYNTH
+    FA5 --> P1_SYNTH
+
+    %% Phase 1 outputs
+    P1_SYNTH -->|"screen-catalog.md<br/>component-library.md<br/>system-architecture-map.md"| PHASE_2_START
+
+    %% ============================================================
+    %% PHASE 2 — MIGRATION ANALYSIS
+    %% ============================================================
+    subgraph PHASE_2 ["Phase 2 — Migration Analysis"]
+        direction TB
+        PHASE_2_START[" "]
+        style PHASE_2_START fill:none,stroke:none,height:0
+
+        P2_MEETING["Meeting Analyst<br/><i>Transcript + frames →<br/>Feature Inventory</i>"]:::phase2
+        P2_SFCC["SFCC B2B Expert<br/><i>Capability mapping</i>"]:::phase2
+        P2_UI["UI Migration<br/><i>LWC component mapping</i>"]:::phase2
+        P2_INT["Integration Analyst<br/><i>API + system mapping</i>"]:::phase2
+        P2_DATA["Data Schema<br/><i>Object model design</i>"]:::phase2
+        P2_GAP["Gap Analyst<br/><i>Synthesize all findings</i>"]:::phase2key
+    end
+
+    P0_TRANSCRIBE -->|"audio-transcript.txt"| P2_MEETING
+    PHASE_2_START --> P2_MEETING
+    PHASE_2_START --> P2_UI
+    PHASE_2_START --> P2_INT
+    PHASE_2_START --> P2_DATA
+
+    P2_MEETING -->|"Feature Inventory"| P2_SFCC
+    P2_SFCC -->|"Capability assessments"| P2_GAP
+    P2_UI -->|"UI gaps"| P2_GAP
+    P2_INT -->|"Integration gaps"| P2_GAP
+    P2_DATA -->|"Schema gaps"| P2_GAP
+    P2_MEETING -->|"Features + pain points"| P2_GAP
+
+    %% ============================================================
+    %% PHASE 2.5 — VALIDATION & ELICITATION
+    %% ============================================================
+    subgraph PHASE_25 ["Phase 2.5 — Validation & Elicitation"]
+        direction LR
+        P25_VALIDATOR["SFCC Validator<br/><i>Web search fact-checking</i><br/><b>Salesforce docs, Trailhead,<br/>AppExchange, release notes</b>"]:::phase25
+        P25_ELICITOR["Client Elicitor<br/><i>Stakeholder Q&A synthesis</i><br/><b>Prioritized questions +<br/>meeting prep guide</b>"]:::phase25
+    end
+
+    P2_GAP -->|"gap-analysis.md"| P25_VALIDATOR
+    P2_GAP -->|"gap-analysis.md +<br/>feature-inventory.md"| P25_ELICITOR
+    P25_VALIDATOR -->|"validation findings"| P25_ELICITOR
+
+    %% ============================================================
+    %% PHASE 3 — CONFLUENCE EXPORT
+    %% ============================================================
+    subgraph PHASE_3 ["Phase 3 — Confluence Export"]
+        P3_CONFLUENCE["Confluence Exporter<br/><i>XHTML + Wiki Markup</i>"]:::phase3
+    end
+
+    P2_GAP -->|"gap-analysis.md"| P3_CONFLUENCE
+
+    %% ============================================================
+    %% OUTPUTS
+    %% ============================================================
+    P25_VALIDATOR --> OUT_VALID["📋 SFCC Validation Report<br/><i>Evidence-linked fact-check</i>"]:::output
+    P25_ELICITOR --> OUT_ELICIT["📝 Client Elicitation Doc<br/><i>Prioritized stakeholder Q&A</i>"]:::output
+    P25_ELICITOR --> OUT_MEETING["📅 Meeting Prep Guide<br/><i>Agenda + talking points</i>"]:::output
+    P3_CONFLUENCE --> OUT_CONF_HTML["🌐 Confluence Storage Format<br/><i>.html — paste or API import</i>"]:::output
+    P3_CONFLUENCE --> OUT_CONF_WIKI["📄 Confluence Wiki Markup<br/><i>.confluence — wiki editor paste</i>"]:::output
+    P2_GAP --> OUT_GAP["📊 Gap Analysis<br/><i>Client-centric markdown</i>"]:::output

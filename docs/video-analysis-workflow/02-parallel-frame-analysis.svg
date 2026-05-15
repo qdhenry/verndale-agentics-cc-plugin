@@ -1,0 +1,257 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 720" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#3b82f6"/>
+    </marker>
+    <marker id="arr-gray" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#94a3b8"/>
+    </marker>
+    <marker id="arr-amber" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#d97706"/>
+    </marker>
+    <filter id="sh" x="-3%" y="-3%" width="106%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2.5" flood-opacity="0.07"/>
+    </filter>
+    <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="0.8" fill="#cbd5e1" opacity="0.5"/>
+    </pattern>
+  </defs>
+
+  <rect width="1100" height="720" fill="#f8fafc" rx="12"/>
+  <rect width="1100" height="720" fill="url(#dots)" rx="12"/>
+
+  <text x="550" y="38" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">Parallel Frame Analysis — Chunk Processing Detail</text>
+  <text x="550" y="58" text-anchor="middle" font-size="12" fill="#64748b">5 frame-analyst agents process video frames simultaneously, then merge via frame-synthesis</text>
+
+  <!-- Video source -->
+  <rect x="40" y="86" width="200" height="70" rx="10" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="140" y="110" text-anchor="middle" font-size="12" font-weight="700" fill="#92400e">Meeting Recording</text>
+  <text x="140" y="126" text-anchor="middle" font-size="10" fill="#a16207">17 min 20 sec • 209 frames</text>
+  <text x="140" y="142" text-anchor="middle" font-size="9" fill="#a16207">5-second intervals</text>
+
+  <!-- Timeline bar -->
+  <rect x="280" y="95" width="780" height="52" rx="8" fill="#fff" stroke="#e2e8f0" filter="url(#sh)"/>
+  <text x="670" y="112" text-anchor="middle" font-size="10" font-weight="600" fill="#475569">Video Timeline (17:20)</text>
+
+  <!-- Chunk segments on timeline -->
+  <rect x="290" y="120" width="148" height="18" rx="3" fill="#3b82f6" opacity="0.8"/>
+  <text x="364" y="133" text-anchor="middle" font-size="8" font-weight="600" fill="#fff">Chunk 1: 00:00–03:25</text>
+
+  <rect x="442" y="120" width="148" height="18" rx="3" fill="#6366f1" opacity="0.8"/>
+  <text x="516" y="133" text-anchor="middle" font-size="8" font-weight="600" fill="#fff">Chunk 2: 03:30–06:55</text>
+
+  <rect x="594" y="120" width="148" height="18" rx="3" fill="#8b5cf6" opacity="0.8"/>
+  <text x="668" y="133" text-anchor="middle" font-size="8" font-weight="600" fill="#fff">Chunk 3: 07:00–10:25</text>
+
+  <rect x="746" y="120" width="148" height="18" rx="3" fill="#a855f7" opacity="0.8"/>
+  <text x="820" y="133" text-anchor="middle" font-size="8" font-weight="600" fill="#fff">Chunk 4: 10:30–13:55</text>
+
+  <rect x="898" y="120" width="152" height="18" rx="3" fill="#c084fc" opacity="0.8"/>
+  <text x="974" y="133" text-anchor="middle" font-size="8" font-weight="600" fill="#fff">Chunk 5: 14:00–17:20</text>
+
+  <!-- Arrow from video to timeline -->
+  <line x1="240" y1="121" x2="278" y2="121" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#arr-amber)"/>
+
+  <!-- 5 parallel agent columns -->
+  <!-- Chunk 1 -->
+  <g transform="translate(48, 170)">
+    <rect width="192" height="280" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+    <rect width="192" height="34" rx="8" fill="#3b82f6"/>
+    <rect x="0" y="17" width="192" height="17" fill="#3b82f6"/>
+    <text x="96" y="23" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">Frame Analyst — Chunk 1</text>
+
+    <text x="96" y="54" text-anchor="middle" font-size="9" font-weight="600" fill="#1e40af">Frames 1–42</text>
+    <text x="96" y="68" text-anchor="middle" font-size="8" fill="#64748b">Home, Catalog, Budgets</text>
+
+    <rect x="12" y="80" width="168" height="22" rx="3" fill="#fff" stroke="#cbd5e1"/>
+    <text x="96" y="95" text-anchor="middle" font-size="8" fill="#475569">Read frame_001.png ... frame_042.png</text>
+
+    <rect x="12" y="110" width="168" height="22" rx="3" fill="#fff" stroke="#cbd5e1"/>
+    <text x="96" y="125" text-anchor="middle" font-size="8" fill="#475569">Detect distinct screens</text>
+
+    <rect x="12" y="140" width="168" height="22" rx="3" fill="#fff" stroke="#cbd5e1"/>
+    <text x="96" y="155" text-anchor="middle" font-size="8" fill="#475569">Catalog: Nav, Forms, Tables</text>
+
+    <rect x="12" y="170" width="168" height="22" rx="3" fill="#fff" stroke="#cbd5e1"/>
+    <text x="96" y="185" text-anchor="middle" font-size="8" fill="#475569">Extract on-screen text</text>
+
+    <rect x="12" y="200" width="168" height="22" rx="3" fill="#fff" stroke="#cbd5e1"/>
+    <text x="96" y="215" text-anchor="middle" font-size="8" fill="#475569">Infer data structures</text>
+
+    <rect x="12" y="230" width="168" height="22" rx="3" fill="#fff" stroke="#cbd5e1"/>
+    <text x="96" y="245" text-anchor="middle" font-size="8" fill="#475569">Log screen transitions</text>
+
+    <rect x="12" y="256" width="168" height="16" rx="3" fill="#dbeafe"/>
+    <text x="96" y="267" text-anchor="middle" font-size="7" font-weight="600" fill="#1e40af">→ chunk-1.md</text>
+  </g>
+
+  <!-- Chunk 2 -->
+  <g transform="translate(256, 170)">
+    <rect width="192" height="280" rx="8" fill="#eef2ff" stroke="#a5b4fc" stroke-width="1"/>
+    <rect width="192" height="34" rx="8" fill="#6366f1"/>
+    <rect x="0" y="17" width="192" height="17" fill="#6366f1"/>
+    <text x="96" y="23" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">Frame Analyst — Chunk 2</text>
+
+    <text x="96" y="54" text-anchor="middle" font-size="9" font-weight="600" fill="#4338ca">Frames 43–84</text>
+    <text x="96" y="68" text-anchor="middle" font-size="8" fill="#64748b">Search, Detail, Customize</text>
+
+    <rect x="12" y="80" width="168" height="22" rx="3" fill="#fff" stroke="#cbd5e1"/>
+    <text x="96" y="95" text-anchor="middle" font-size="8" fill="#475569">Read frame_043.png ... frame_084.png</text>
+
+    <rect x="12" y="110" width="168" height="22" rx="3" fill="#fff" stroke="#cbd5e1"/>
+    <text x="96" y="125" text-anchor="middle" font-size="8" fill="#475569">Detect distinct screens</text>
+
+    <rect x="12" y="140" width="168" height="22" rx="3" fill="#fff" stroke="#cbd5e1"/>
+    <text x="96" y="155" text-anchor="middle" font-size="8" fill="#475569">Catalog: Forms, Uploads, Dates</text>
+
+    <rect x="12" y="170" width="168" height="22" rx="3" fill="#fff" stroke="#cbd5e1"/>
+    <text x="96" y="185" text-anchor="middle" font-size="8" fill="#475569">Extract field labels + values</text>
+
+    <rect x="12" y="200" width="168" height="22" rx="3" fill="#fff" stroke="#cbd5e1"/>
+    <text x="96" y="215" text-anchor="middle" font-size="8" fill="#475569">Infer customization entities</text>
+
+    <rect x="12" y="230" width="168" height="22" rx="3" fill="#fff" stroke="#cbd5e1"/>
+    <text x="96" y="245" text-anchor="middle" font-size="8" fill="#475569">Log screen transitions</text>
+
+    <rect x="12" y="256" width="168" height="16" rx="3" fill="#e0e7ff"/>
+    <text x="96" y="267" text-anchor="middle" font-size="7" font-weight="600" fill="#4338ca">→ chunk-2.md</text>
+  </g>
+
+  <!-- Chunk 3 -->
+  <g transform="translate(464, 170)">
+    <rect width="192" height="280" rx="8" fill="#f5f3ff" stroke="#c4b5fd" stroke-width="1"/>
+    <rect width="192" height="34" rx="8" fill="#8b5cf6"/>
+    <rect x="0" y="17" width="192" height="17" fill="#8b5cf6"/>
+    <text x="96" y="23" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">Frame Analyst — Chunk 3</text>
+
+    <text x="96" y="54" text-anchor="middle" font-size="9" font-weight="600" fill="#6d28d9">Frames 85–126</text>
+    <text x="96" y="68" text-anchor="middle" font-size="8" fill="#64748b">Cart, Checkout, Co-op</text>
+
+    <rect x="12" y="80" width="168" height="22" rx="3" fill="#fff" stroke="#cbd5e1"/>
+    <text x="96" y="95" text-anchor="middle" font-size="8" fill="#475569">Read frame_085.png ... frame_126.png</text>
+
+    <rect x="12" y="110" width="168" height="22" rx="3" fill="#fff" stroke="#cbd5e1"/>
+    <text x="96" y="125" text-anchor="middle" font-size="8" fill="#475569">Detect distinct screens</text>
+
+    <rect x="12" y="140" width="168" height="22" rx="3" fill="#fff" stroke="#cbd5e1"/>
+    <text x="96" y="155" text-anchor="middle" font-size="8" fill="#475569">Catalog: Tables, Budgets, $</text>
+
+    <rect x="12" y="170" width="168" height="22" rx="3" fill="#fff" stroke="#cbd5e1"/>
+    <text x="96" y="185" text-anchor="middle" font-size="8" fill="#475569">Extract pricing + budget data</text>
+
+    <rect x="12" y="200" width="168" height="22" rx="3" fill="#fff" stroke="#cbd5e1"/>
+    <text x="96" y="215" text-anchor="middle" font-size="8" fill="#475569">Infer order + billing entities</text>
+
+    <rect x="12" y="230" width="168" height="22" rx="3" fill="#fff" stroke="#cbd5e1"/>
+    <text x="96" y="245" text-anchor="middle" font-size="8" fill="#475569">Log screen transitions</text>
+
+    <rect x="12" y="256" width="168" height="16" rx="3" fill="#ede9fe"/>
+    <text x="96" y="267" text-anchor="middle" font-size="7" font-weight="600" fill="#6d28d9">→ chunk-3.md</text>
+  </g>
+
+  <!-- Chunk 4 -->
+  <g transform="translate(672, 170)">
+    <rect width="192" height="280" rx="8" fill="#faf5ff" stroke="#d8b4fe" stroke-width="1"/>
+    <rect width="192" height="34" rx="8" fill="#a855f7"/>
+    <rect x="0" y="17" width="192" height="17" fill="#a855f7"/>
+    <text x="96" y="23" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">Frame Analyst — Chunk 4</text>
+
+    <text x="96" y="54" text-anchor="middle" font-size="9" font-weight="600" fill="#7e22ce">Frames 127–168</text>
+    <text x="96" y="68" text-anchor="middle" font-size="8" fill="#64748b">History, Admin, Catalog Mgmt</text>
+
+    <rect x="12" y="80" width="168" height="22" rx="3" fill="#fff" stroke="#cbd5e1"/>
+    <text x="96" y="95" text-anchor="middle" font-size="8" fill="#475569">Read frame_127.png ... frame_168.png</text>
+
+    <rect x="12" y="110" width="168" height="22" rx="3" fill="#fff" stroke="#cbd5e1"/>
+    <text x="96" y="125" text-anchor="middle" font-size="8" fill="#475569">Detect distinct screens</text>
+
+    <rect x="12" y="140" width="168" height="22" rx="3" fill="#fff" stroke="#cbd5e1"/>
+    <text x="96" y="155" text-anchor="middle" font-size="8" fill="#475569">Catalog: Grids, Filters, Admin</text>
+
+    <rect x="12" y="170" width="168" height="22" rx="3" fill="#fff" stroke="#cbd5e1"/>
+    <text x="96" y="185" text-anchor="middle" font-size="8" fill="#475569">Extract order + item fields</text>
+
+    <rect x="12" y="200" width="168" height="22" rx="3" fill="#fff" stroke="#cbd5e1"/>
+    <text x="96" y="215" text-anchor="middle" font-size="8" fill="#475569">Infer admin data entities</text>
+
+    <rect x="12" y="230" width="168" height="22" rx="3" fill="#fff" stroke="#cbd5e1"/>
+    <text x="96" y="245" text-anchor="middle" font-size="8" fill="#475569">Log screen transitions</text>
+
+    <rect x="12" y="256" width="168" height="16" rx="3" fill="#f3e8ff"/>
+    <text x="96" y="267" text-anchor="middle" font-size="7" font-weight="600" fill="#7e22ce">→ chunk-4.md</text>
+  </g>
+
+  <!-- Chunk 5 -->
+  <g transform="translate(880, 170)">
+    <rect width="192" height="280" rx="8" fill="#fdf4ff" stroke="#e9d5ff" stroke-width="1"/>
+    <rect width="192" height="34" rx="8" fill="#c084fc"/>
+    <rect x="0" y="17" width="192" height="17" fill="#c084fc"/>
+    <text x="96" y="23" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">Frame Analyst — Chunk 5</text>
+
+    <text x="96" y="54" text-anchor="middle" font-size="9" font-weight="600" fill="#7e22ce">Frames 169–209</text>
+    <text x="96" y="68" text-anchor="middle" font-size="8" fill="#64748b">Reporting, Links, Fulfillment</text>
+
+    <rect x="12" y="80" width="168" height="22" rx="3" fill="#fff" stroke="#cbd5e1"/>
+    <text x="96" y="95" text-anchor="middle" font-size="8" fill="#475569">Read frame_169.png ... frame_209.png</text>
+
+    <rect x="12" y="110" width="168" height="22" rx="3" fill="#fff" stroke="#cbd5e1"/>
+    <text x="96" y="125" text-anchor="middle" font-size="8" fill="#475569">Detect distinct screens</text>
+
+    <rect x="12" y="140" width="168" height="22" rx="3" fill="#fff" stroke="#cbd5e1"/>
+    <text x="96" y="155" text-anchor="middle" font-size="8" fill="#475569">Catalog: Reports, Links, Ext</text>
+
+    <rect x="12" y="170" width="168" height="22" rx="3" fill="#fff" stroke="#cbd5e1"/>
+    <text x="96" y="185" text-anchor="middle" font-size="8" fill="#475569">Extract vendor + report info</text>
+
+    <rect x="12" y="200" width="168" height="22" rx="3" fill="#fff" stroke="#cbd5e1"/>
+    <text x="96" y="215" text-anchor="middle" font-size="8" fill="#475569">Infer integration points</text>
+
+    <rect x="12" y="230" width="168" height="22" rx="3" fill="#fff" stroke="#cbd5e1"/>
+    <text x="96" y="245" text-anchor="middle" font-size="8" fill="#475569">Log screen transitions</text>
+
+    <rect x="12" y="256" width="168" height="16" rx="3" fill="#fae8ff"/>
+    <text x="96" y="267" text-anchor="middle" font-size="7" font-weight="600" fill="#7e22ce">→ chunk-5.md</text>
+  </g>
+
+  <!-- Convergence area -->
+  <rect x="48" y="470" width="1024" height="40" rx="6" fill="#fef9c3" stroke="#fbbf24" stroke-dasharray="4,3"/>
+  <text x="560" y="494" text-anchor="middle" font-size="10" font-weight="600" fill="#92400e">ALL 5 CHUNKS COMPLETE — Synthesis agent triggers</text>
+
+  <!-- Arrows down from each chunk -->
+  <line x1="144" y1="450" x2="144" y2="468" stroke="#94a3b8" stroke-width="1" marker-end="url(#arr-gray)"/>
+  <line x1="352" y1="450" x2="352" y2="468" stroke="#94a3b8" stroke-width="1" marker-end="url(#arr-gray)"/>
+  <line x1="560" y1="450" x2="560" y2="468" stroke="#94a3b8" stroke-width="1" marker-end="url(#arr-gray)"/>
+  <line x1="768" y1="450" x2="768" y2="468" stroke="#94a3b8" stroke-width="1" marker-end="url(#arr-gray)"/>
+  <line x1="976" y1="450" x2="976" y2="468" stroke="#94a3b8" stroke-width="1" marker-end="url(#arr-gray)"/>
+
+  <!-- Frame Synthesis box -->
+  <rect x="320" y="530" width="460" height="60" rx="10" fill="#fff" stroke="#1e40af" stroke-width="2.5" filter="url(#sh)"/>
+  <text x="550" y="556" text-anchor="middle" font-size="15" font-weight="700" fill="#1e40af">Frame Synthesis Agent</text>
+  <text x="550" y="576" text-anchor="middle" font-size="10" fill="#64748b">Merge • Deduplicate • Unify across all chunks</text>
+
+  <line x1="550" y1="510" x2="550" y2="528" stroke="#1e40af" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- Three output documents -->
+  <rect x="80" y="620" width="260" height="74" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="210" y="644" text-anchor="middle" font-size="12" font-weight="700" fill="#1e40af">Screen Catalog</text>
+  <text x="210" y="660" text-anchor="middle" font-size="9" fill="#475569">Every distinct screen, deduplicated</text>
+  <text x="210" y="676" text-anchor="middle" font-size="9" fill="#475569">Canonical IDs: SCR-001 through SCR-N</text>
+  <text x="210" y="688" text-anchor="middle" font-size="8" fill="#64748b">→ feeds UI Migration agent</text>
+
+  <rect x="420" y="620" width="260" height="74" rx="8" fill="#e0e7ff" stroke="#6366f1" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="550" y="644" text-anchor="middle" font-size="12" font-weight="700" fill="#4338ca">Component Library</text>
+  <text x="550" y="660" text-anchor="middle" font-size="9" fill="#475569">All UI components with variations</text>
+  <text x="550" y="676" text-anchor="middle" font-size="9" fill="#475569">Forms, tables, nav, actions, layouts</text>
+  <text x="550" y="688" text-anchor="middle" font-size="8" fill="#64748b">→ feeds UI Migration + Data Schema agents</text>
+
+  <rect x="760" y="620" width="260" height="74" rx="8" fill="#ede9fe" stroke="#8b5cf6" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="890" y="644" text-anchor="middle" font-size="12" font-weight="700" fill="#6d28d9">Architecture Map</text>
+  <text x="890" y="660" text-anchor="middle" font-size="9" fill="#475569">Nav tree, ER sketch, field catalog</text>
+  <text x="890" y="676" text-anchor="middle" font-size="9" fill="#475569">URL patterns, data relationships</text>
+  <text x="890" y="688" text-anchor="middle" font-size="8" fill="#64748b">→ feeds Data Schema + Integration agents</text>
+
+  <!-- Arrows from synthesis to outputs -->
+  <line x1="430" y1="590" x2="280" y2="618" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="550" y1="590" x2="550" y2="618" stroke="#6366f1" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="670" y1="590" x2="820" y2="618" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#arr)"/>
+</svg>

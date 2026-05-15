@@ -1,0 +1,199 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <defs>
+    <marker id="ar" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#475569"/>
+    </marker>
+    <marker id="ar-teal" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0d9488"/>
+    </marker>
+    <marker id="ar-rose" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e11d48"/>
+    </marker>
+    <filter id="ds" x="-3%" y="-3%" width="106%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2.5" flood-opacity="0.07"/>
+    </filter>
+  </defs>
+
+  <rect width="1000" height="680" fill="#f8fafc" rx="12"/>
+
+  <text x="500" y="36" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">Iterative Gap Analysis — Meeting-by-Meeting Growth</text>
+  <text x="500" y="56" text-anchor="middle" font-size="12" fill="#64748b">Each client meeting adds to the living gap analysis document</text>
+
+  <!-- Timeline arrow across the top -->
+  <line x1="60" y1="90" x2="940" y2="90" stroke="#cbd5e1" stroke-width="2"/>
+  <polygon points="940,86 952,90 940,94" fill="#cbd5e1"/>
+  <text x="960" y="94" font-size="9" fill="#94a3b8">time</text>
+
+  <!-- Meeting 1 -->
+  <g transform="translate(60, 80)">
+    <circle cx="0" cy="10" r="8" fill="#0d9488"/>
+    <text x="0" y="36" text-anchor="middle" font-size="10" font-weight="700" fill="#0d9488">Meeting 1</text>
+    <text x="0" y="48" text-anchor="middle" font-size="8" fill="#64748b">Platform Overview</text>
+    <text x="0" y="58" text-anchor="middle" font-size="8" fill="#64748b">Dec 2025</text>
+  </g>
+
+  <!-- Meeting 2 -->
+  <g transform="translate(300, 80)">
+    <circle cx="0" cy="10" r="8" fill="#0d9488"/>
+    <text x="0" y="36" text-anchor="middle" font-size="10" font-weight="700" fill="#0d9488">Meeting 2</text>
+    <text x="0" y="48" text-anchor="middle" font-size="8" fill="#64748b">Budget Deep Dive</text>
+    <text x="0" y="58" text-anchor="middle" font-size="8" fill="#64748b">Jan 2026</text>
+  </g>
+
+  <!-- Meeting 3 -->
+  <g transform="translate(540, 80)">
+    <circle cx="0" cy="10" r="8" fill="#0d9488"/>
+    <text x="0" y="36" text-anchor="middle" font-size="10" font-weight="700" fill="#0d9488">Meeting 3</text>
+    <text x="0" y="48" text-anchor="middle" font-size="8" fill="#64748b">Admin + Reporting</text>
+    <text x="0" y="58" text-anchor="middle" font-size="8" fill="#64748b">Feb 2026</text>
+  </g>
+
+  <!-- Meeting N -->
+  <g transform="translate(780, 80)">
+    <circle cx="0" cy="10" r="8" fill="#0d9488" stroke="#0d9488" stroke-dasharray="3,2"/>
+    <text x="0" y="36" text-anchor="middle" font-size="10" font-weight="700" fill="#0d9488">Meeting N</text>
+    <text x="0" y="48" text-anchor="middle" font-size="8" fill="#64748b">UAT / Validation</text>
+    <text x="0" y="58" text-anchor="middle" font-size="8" fill="#64748b">Future</text>
+  </g>
+
+  <!-- Meeting 1 Processing -->
+  <g transform="translate(20, 165)">
+    <rect width="220" height="230" rx="8" fill="#f0fdfa" stroke="#99f6e4" stroke-width="1"/>
+    <text x="110" y="22" text-anchor="middle" font-size="10" font-weight="700" fill="#0d9488">Meeting 1 Processing</text>
+
+    <!-- Ingest -->
+    <rect x="14" y="36" width="192" height="30" rx="5" fill="#fff" stroke="#5eead4" filter="url(#ds)"/>
+    <text x="110" y="55" text-anchor="middle" font-size="9" font-weight="600" fill="#0d9488">Extract Frames + Transcript</text>
+
+    <!-- Parallel -->
+    <rect x="14" y="74" width="192" height="30" rx="5" fill="#fff" stroke="#5eead4" filter="url(#ds)"/>
+    <text x="110" y="93" text-anchor="middle" font-size="9" font-weight="600" fill="#0d9488">Frame Analysts ×5 (parallel)</text>
+
+    <!-- Synthesis -->
+    <rect x="14" y="112" width="192" height="30" rx="5" fill="#fff" stroke="#5eead4" filter="url(#ds)"/>
+    <text x="110" y="131" text-anchor="middle" font-size="9" font-weight="600" fill="#0d9488">Frame Synthesis</text>
+
+    <!-- Analysis team -->
+    <rect x="14" y="150" width="192" height="30" rx="5" fill="#fff" stroke="#5eead4" filter="url(#ds)"/>
+    <text x="110" y="169" text-anchor="middle" font-size="9" font-weight="600" fill="#0d9488">Analysis Team (5 agents)</text>
+
+    <!-- Output -->
+    <rect x="14" y="192" width="192" height="28" rx="5" fill="#ccfbf1" stroke="#14b8a6"/>
+    <text x="110" y="210" text-anchor="middle" font-size="9" font-weight="700" fill="#0f766e">Gap Analysis v1.0</text>
+  </g>
+
+  <!-- Arrow from M1 dot down to processing -->
+  <line x1="60" y1="148" x2="130" y2="163" stroke="#0d9488" stroke-width="1.5" marker-end="url(#ar-teal)"/>
+
+  <!-- Meeting 2 Processing -->
+  <g transform="translate(260, 165)">
+    <rect width="220" height="230" rx="8" fill="#f0fdfa" stroke="#99f6e4" stroke-width="1"/>
+    <text x="110" y="22" text-anchor="middle" font-size="10" font-weight="700" fill="#0d9488">Meeting 2 Processing</text>
+
+    <rect x="14" y="36" width="192" height="30" rx="5" fill="#fff" stroke="#5eead4" filter="url(#ds)"/>
+    <text x="110" y="55" text-anchor="middle" font-size="9" font-weight="600" fill="#0d9488">Extract Frames + Transcript</text>
+
+    <rect x="14" y="74" width="192" height="30" rx="5" fill="#fff" stroke="#5eead4" filter="url(#ds)"/>
+    <text x="110" y="93" text-anchor="middle" font-size="9" font-weight="600" fill="#0d9488">Frame Analysts ×5 (parallel)</text>
+
+    <rect x="14" y="112" width="192" height="30" rx="5" fill="#fff" stroke="#5eead4" filter="url(#ds)"/>
+    <text x="110" y="131" text-anchor="middle" font-size="9" font-weight="600" fill="#0d9488">Frame Synthesis</text>
+
+    <rect x="14" y="150" width="192" height="30" rx="5" fill="#fff" stroke="#5eead4" filter="url(#ds)"/>
+    <text x="110" y="169" text-anchor="middle" font-size="9" font-weight="600" fill="#0d9488">Analysis Team (5 agents)</text>
+
+    <rect x="14" y="192" width="192" height="28" rx="5" fill="#ccfbf1" stroke="#14b8a6"/>
+    <text x="110" y="210" text-anchor="middle" font-size="9" font-weight="700" fill="#0f766e">Gap Analysis v2.0</text>
+  </g>
+
+  <line x1="300" y1="148" x2="370" y2="163" stroke="#0d9488" stroke-width="1.5" marker-end="url(#ar-teal)"/>
+
+  <!-- Meeting 3 Processing -->
+  <g transform="translate(500, 165)">
+    <rect width="220" height="230" rx="8" fill="#f0fdfa" stroke="#99f6e4" stroke-width="1"/>
+    <text x="110" y="22" text-anchor="middle" font-size="10" font-weight="700" fill="#0d9488">Meeting 3 Processing</text>
+
+    <rect x="14" y="36" width="192" height="30" rx="5" fill="#fff" stroke="#5eead4" filter="url(#ds)"/>
+    <text x="110" y="55" text-anchor="middle" font-size="9" font-weight="600" fill="#0d9488">Extract Frames + Transcript</text>
+
+    <rect x="14" y="74" width="192" height="30" rx="5" fill="#fff" stroke="#5eead4" filter="url(#ds)"/>
+    <text x="110" y="93" text-anchor="middle" font-size="9" font-weight="600" fill="#0d9488">Frame Analysts ×5 (parallel)</text>
+
+    <rect x="14" y="112" width="192" height="30" rx="5" fill="#fff" stroke="#5eead4" filter="url(#ds)"/>
+    <text x="110" y="131" text-anchor="middle" font-size="9" font-weight="600" fill="#0d9488">Frame Synthesis</text>
+
+    <rect x="14" y="150" width="192" height="30" rx="5" fill="#fff" stroke="#5eead4" filter="url(#ds)"/>
+    <text x="110" y="169" text-anchor="middle" font-size="9" font-weight="600" fill="#0d9488">Analysis Team (5 agents)</text>
+
+    <rect x="14" y="192" width="192" height="28" rx="5" fill="#ccfbf1" stroke="#14b8a6"/>
+    <text x="110" y="210" text-anchor="middle" font-size="9" font-weight="700" fill="#0f766e">Gap Analysis v3.0</text>
+  </g>
+
+  <line x1="540" y1="148" x2="610" y2="163" stroke="#0d9488" stroke-width="1.5" marker-end="url(#ar-teal)"/>
+
+  <!-- Meeting N Processing (faded) -->
+  <g transform="translate(740, 165)" opacity="0.5">
+    <rect width="220" height="230" rx="8" fill="#f0fdfa" stroke="#99f6e4" stroke-width="1" stroke-dasharray="4,3"/>
+    <text x="110" y="22" text-anchor="middle" font-size="10" font-weight="700" fill="#0d9488">Meeting N Processing</text>
+
+    <rect x="14" y="36" width="192" height="30" rx="5" fill="#fff" stroke="#5eead4"/>
+    <text x="110" y="55" text-anchor="middle" font-size="9" fill="#0d9488">Same pipeline...</text>
+
+    <rect x="14" y="192" width="192" height="28" rx="5" fill="#ccfbf1" stroke="#14b8a6"/>
+    <text x="110" y="210" text-anchor="middle" font-size="9" font-weight="700" fill="#0f766e">Gap Analysis vN.0</text>
+  </g>
+
+  <line x1="780" y1="148" x2="850" y2="163" stroke="#0d9488" stroke-width="1.5" marker-end="url(#ar-teal)" stroke-dasharray="4,3"/>
+
+  <!-- Horizontal carry-forward arrows between versions -->
+  <path d="M240,382 Q260,390 260,382" stroke="#e11d48" stroke-width="1.5" fill="none" marker-end="url(#ar-rose)"/>
+  <text x="250" y="404" text-anchor="middle" font-size="8" font-weight="600" fill="#e11d48">v1 feeds v2</text>
+
+  <path d="M480,382 Q500,390 500,382" stroke="#e11d48" stroke-width="1.5" fill="none" marker-end="url(#ar-rose)"/>
+  <text x="490" y="404" text-anchor="middle" font-size="8" font-weight="600" fill="#e11d48">v2 feeds v3</text>
+
+  <path d="M720,382 Q740,390 740,382" stroke="#e11d48" stroke-width="1.5" fill="none" stroke-dasharray="4,3" marker-end="url(#ar-rose)"/>
+
+  <!-- Gap Analysis Growth Visualization -->
+  <rect x="50" y="430" width="900" height="230" rx="10" fill="#fff" stroke="#e2e8f0" filter="url(#ds)"/>
+  <text x="500" y="456" text-anchor="middle" font-size="13" font-weight="700" fill="#0f172a">Gap Analysis Document — Cumulative Growth</text>
+
+  <!-- Version bars -->
+  <g transform="translate(100, 474)">
+    <text x="-10" y="14" text-anchor="end" font-size="9" font-weight="600" fill="#475569">v1.0</text>
+    <rect x="0" y="0" width="260" height="24" rx="4" fill="#0d9488" opacity="0.8"/>
+    <text x="130" y="16" text-anchor="middle" font-size="9" font-weight="600" fill="#fff">8 workflows • 14 gaps • 10 assumptions</text>
+  </g>
+
+  <g transform="translate(100, 510)">
+    <text x="-10" y="14" text-anchor="end" font-size="9" font-weight="600" fill="#475569">v2.0</text>
+    <rect x="0" y="0" width="480" height="24" rx="4" fill="#0d9488" opacity="0.7"/>
+    <rect x="260" y="0" width="220" height="24" rx="0 4 4 0" fill="#14b8a6" opacity="0.8"/>
+    <text x="130" y="16" text-anchor="middle" font-size="9" font-weight="600" fill="#fff">original 8 workflows refined</text>
+    <text x="370" y="16" text-anchor="middle" font-size="9" font-weight="600" fill="#fff">+4 budget workflows • +8 gaps</text>
+  </g>
+
+  <g transform="translate(100, 546)">
+    <text x="-10" y="14" text-anchor="end" font-size="9" font-weight="600" fill="#475569">v3.0</text>
+    <rect x="0" y="0" width="680" height="24" rx="4" fill="#0d9488" opacity="0.6"/>
+    <rect x="480" y="0" width="200" height="24" rx="0 4 4 0" fill="#14b8a6" opacity="0.8"/>
+    <text x="240" y="16" text-anchor="middle" font-size="9" font-weight="600" fill="#fff">original + budget workflows refined</text>
+    <text x="580" y="16" text-anchor="middle" font-size="9" font-weight="600" fill="#fff">+admin/reporting gaps</text>
+  </g>
+
+  <g transform="translate(100, 582)">
+    <text x="-10" y="14" text-anchor="end" font-size="9" font-weight="600" fill="#475569">vN.0</text>
+    <rect x="0" y="0" width="800" height="24" rx="4" fill="#0d9488" opacity="0.5" stroke="#0d9488" stroke-dasharray="4,3"/>
+    <text x="400" y="16" text-anchor="middle" font-size="9" font-weight="600" fill="#fff">comprehensive gap analysis — all workflows validated, assumptions resolved</text>
+  </g>
+
+  <!-- Annotations -->
+  <g transform="translate(100, 624)">
+    <rect x="0" y="0" width="12" height="12" rx="2" fill="#0d9488" opacity="0.8"/>
+    <text x="18" y="10" font-size="9" fill="#475569">Existing content (refined)</text>
+    <rect x="180" y="0" width="12" height="12" rx="2" fill="#14b8a6" opacity="0.8"/>
+    <text x="198" y="10" font-size="9" fill="#475569">New content from latest meeting</text>
+    <rect x="380" y="0" width="12" height="12" rx="2" fill="#e11d48" opacity="0.6"/>
+    <text x="398" y="10" font-size="9" fill="#475569">Assumptions validated / gaps closed</text>
+  </g>
+</svg>

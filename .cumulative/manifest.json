@@ -1,0 +1,50 @@
+{
+  "$schema": "https://schemas.cumulative.dev/plugin/v1.json",
+  "id": "verndal.client-wiki-manager",
+  "type": "tool",
+  "version": "1.0.0",
+  "label": "Client Wiki Manager",
+  "summary": "Verndale Agentics toolkit for managing client wiki content — gap analysis, meeting review, batch enrichment, and Confluence publishing.",
+  "publisher": {
+    "team": "verndale",
+    "tenant": "cumulative_internal",
+    "contact": "verndale@bespoke-agentics.dev"
+  },
+  "tenancy": {
+    "tier": "tenant-scoped",
+    "dataAccess": [
+      { "service": "audit-svc", "scopes": ["events:write"] }
+    ]
+  },
+  "permissions": {
+    "shell": ["audit:write"],
+    "browser": [],
+    "egress": [],
+    "dataAccess": [
+      { "service": "audit-svc", "scopes": ["events:write"] }
+    ]
+  },
+  "defaultAccess": {
+    "byPersona": {
+      "c-suite": "read",
+      "ba": "use",
+      "pm": "use",
+      "sales": "none",
+      "eng": "use",
+      "client": "none"
+    },
+    "byRole": {
+      "admin": "use",
+      "member": "read",
+      "viewer": "none"
+    }
+  },
+  "command": {
+    "label": "Client Wiki Manager",
+    "keywords": ["wiki", "client", "verndale", "gap-analysis", "confluence"],
+    "action": {
+      "kind": "deep-link",
+      "value": "meta://search?q=client-wiki"
+    }
+  }
+}

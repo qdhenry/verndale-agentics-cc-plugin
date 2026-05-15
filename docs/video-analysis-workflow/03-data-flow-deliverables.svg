@@ -1,0 +1,185 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 760" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <defs>
+    <marker id="a1" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#475569"/>
+    </marker>
+    <marker id="a-red" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#dc2626"/>
+    </marker>
+    <filter id="s1" x="-3%" y="-3%" width="106%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-opacity="0.06"/>
+    </filter>
+  </defs>
+
+  <rect width="1100" height="760" fill="#f8fafc" rx="12"/>
+
+  <text x="550" y="38" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">Agent Data Flows &amp; Deliverable Map</text>
+  <text x="550" y="58" text-anchor="middle" font-size="12" fill="#64748b">How information flows between agents and what each produces</text>
+
+  <!-- Column headers -->
+  <text x="140" y="92" text-anchor="middle" font-size="11" font-weight="700" fill="#475569" letter-spacing="1.5">INPUTS</text>
+  <text x="420" y="92" text-anchor="middle" font-size="11" font-weight="700" fill="#475569" letter-spacing="1.5">AGENTS</text>
+  <text x="770" y="92" text-anchor="middle" font-size="11" font-weight="700" fill="#475569" letter-spacing="1.5">DELIVERABLES</text>
+  <text x="1000" y="92" text-anchor="middle" font-size="11" font-weight="700" fill="#475569" letter-spacing="1.5">CONSUMERS</text>
+
+  <line x1="30" y1="100" x2="1070" y2="100" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Row 1: Frame Analysis -->
+  <rect x="30" y="110" width="1040" height="120" rx="6" fill="#eff6ff" opacity="0.4"/>
+
+  <rect x="50" y="124" width="160" height="40" rx="6" fill="#fef3c7" stroke="#f59e0b" filter="url(#s1)"/>
+  <text x="130" y="140" text-anchor="middle" font-size="10" font-weight="600" fill="#92400e">209 Video Frames</text>
+  <text x="130" y="154" text-anchor="middle" font-size="8" fill="#a16207">frame_001.png – frame_209.png</text>
+
+  <rect x="310" y="118" width="220" height="54" rx="8" fill="#fff" stroke="#3b82f6" stroke-width="2" filter="url(#s1)"/>
+  <text x="420" y="140" text-anchor="middle" font-size="12" font-weight="700" fill="#1e40af">Frame Analysts ×5</text>
+  <text x="420" y="156" text-anchor="middle" font-size="9" fill="#64748b">parallel visual inspection</text>
+
+  <line x1="212" y1="144" x2="308" y2="144" stroke="#475569" stroke-width="1.2" marker-end="url(#a1)"/>
+
+  <rect x="640" y="118" width="220" height="36" rx="5" fill="#dbeafe" stroke="#93c5fd" filter="url(#s1)"/>
+  <text x="750" y="141" text-anchor="middle" font-size="10" font-weight="600" fill="#1e40af">frame-analysis-chunk-[1-5].md</text>
+
+  <line x1="532" y1="144" x2="638" y2="136" stroke="#475569" stroke-width="1.2" marker-end="url(#a1)"/>
+
+  <!-- Arrow down to synthesis -->
+  <line x1="750" y1="156" x2="750" y2="172" stroke="#475569" stroke-width="1" marker-end="url(#a1)"/>
+
+  <rect x="310" y="180" width="220" height="42" rx="8" fill="#fff" stroke="#6366f1" stroke-width="2" filter="url(#s1)"/>
+  <text x="420" y="198" text-anchor="middle" font-size="12" font-weight="700" fill="#4338ca">Frame Synthesis</text>
+  <text x="420" y="212" text-anchor="middle" font-size="9" fill="#64748b">merge + deduplicate</text>
+
+  <line x1="640" y1="155" x2="532" y2="192" stroke="#475569" stroke-width="1" marker-end="url(#a1)"/>
+
+  <!-- Synthesis outputs -->
+  <rect x="640" y="170" width="200" height="28" rx="4" fill="#dbeafe" stroke="#93c5fd" filter="url(#s1)"/>
+  <text x="740" y="189" text-anchor="middle" font-size="9" font-weight="600" fill="#1e40af">screen-catalog.md</text>
+
+  <rect x="640" y="202" width="200" height="28" rx="4" fill="#e0e7ff" stroke="#a5b4fc" filter="url(#s1)"/>
+  <text x="740" y="221" text-anchor="middle" font-size="9" font-weight="600" fill="#4338ca">component-library.md</text>
+
+  <rect x="640" y="234" width="200" height="28" rx="4" fill="#ede9fe" stroke="#c4b5fd" filter="url(#s1)"/>
+  <text x="740" y="253" text-anchor="middle" font-size="9" font-weight="600" fill="#6d28d9">system-architecture-map.md</text>
+
+  <line x1="532" y1="200" x2="638" y2="184" stroke="#475569" stroke-width="1" marker-end="url(#a1)"/>
+  <line x1="532" y1="200" x2="638" y2="216" stroke="#475569" stroke-width="1" marker-end="url(#a1)"/>
+  <line x1="532" y1="200" x2="638" y2="248" stroke="#475569" stroke-width="1" marker-end="url(#a1)"/>
+
+  <!-- Consumer arrows for synthesis outputs -->
+  <rect x="910" y="170" width="130" height="28" rx="4" fill="#f0fdf4" stroke="#86efac"/>
+  <text x="975" y="189" text-anchor="middle" font-size="9" font-weight="600" fill="#166534">UI Migration</text>
+  <rect x="910" y="202" width="130" height="28" rx="4" fill="#f0fdf4" stroke="#86efac"/>
+  <text x="975" y="221" text-anchor="middle" font-size="9" font-weight="600" fill="#166534">Data Schema</text>
+  <rect x="910" y="234" width="130" height="28" rx="4" fill="#f0fdf4" stroke="#86efac"/>
+  <text x="975" y="253" text-anchor="middle" font-size="9" font-weight="600" fill="#166534">Integration/API</text>
+
+  <line x1="842" y1="184" x2="908" y2="184" stroke="#475569" stroke-width="1" marker-end="url(#a1)"/>
+  <line x1="842" y1="216" x2="908" y2="216" stroke="#475569" stroke-width="1" marker-end="url(#a1)"/>
+  <line x1="842" y1="248" x2="908" y2="248" stroke="#475569" stroke-width="1" marker-end="url(#a1)"/>
+
+  <line x1="30" y1="280" x2="1070" y2="280" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Row 2: Meeting Analyst -->
+  <rect x="30" y="290" width="1040" height="80" rx="6" fill="#fefce8" opacity="0.3"/>
+
+  <rect x="50" y="304" width="160" height="40" rx="6" fill="#fef3c7" stroke="#f59e0b" filter="url(#s1)"/>
+  <text x="130" y="320" text-anchor="middle" font-size="10" font-weight="600" fill="#92400e">Audio Transcript</text>
+  <text x="130" y="334" text-anchor="middle" font-size="8" fill="#a16207">audio-transcript.txt</text>
+
+  <rect x="310" y="300" width="220" height="54" rx="8" fill="#fff" stroke="#059669" stroke-width="2" filter="url(#s1)"/>
+  <text x="420" y="322" text-anchor="middle" font-size="12" font-weight="700" fill="#166534">Meeting Analyst</text>
+  <text x="420" y="338" text-anchor="middle" font-size="9" fill="#64748b">transcript + synthesis → features</text>
+
+  <line x1="212" y1="324" x2="308" y2="324" stroke="#475569" stroke-width="1.2" marker-end="url(#a1)"/>
+
+  <rect x="640" y="302" width="220" height="36" rx="5" fill="#dcfce7" stroke="#86efac" filter="url(#s1)"/>
+  <text x="750" y="325" text-anchor="middle" font-size="10" font-weight="600" fill="#166534">feature-inventory-*.md</text>
+
+  <line x1="532" y1="326" x2="638" y2="320" stroke="#475569" stroke-width="1.2" marker-end="url(#a1)"/>
+
+  <rect x="910" y="302" width="130" height="36" rx="4" fill="#fef2f2" stroke="#fca5a5"/>
+  <text x="975" y="318" text-anchor="middle" font-size="9" font-weight="600" fill="#991b1b">SFCC Expert</text>
+  <text x="975" y="330" text-anchor="middle" font-size="8" fill="#b91c1c">Gap Analyst</text>
+  <line x1="862" y1="320" x2="908" y2="320" stroke="#475569" stroke-width="1" marker-end="url(#a1)"/>
+
+  <line x1="30" y1="382" x2="1070" y2="382" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Row 3: SFCC Expert -->
+  <rect x="30" y="390" width="1040" height="70" rx="6" fill="#fef2f2" opacity="0.2"/>
+
+  <rect x="50" y="400" width="160" height="40" rx="6" fill="#dcfce7" stroke="#86efac" filter="url(#s1)"/>
+  <text x="130" y="416" text-anchor="middle" font-size="10" font-weight="600" fill="#166534">Feature Inventory</text>
+  <text x="130" y="430" text-anchor="middle" font-size="8" fill="#16a34a">from Meeting Analyst</text>
+
+  <rect x="310" y="396" width="220" height="54" rx="8" fill="#fff" stroke="#dc2626" stroke-width="2" filter="url(#s1)"/>
+  <text x="420" y="418" text-anchor="middle" font-size="12" font-weight="700" fill="#991b1b">SFCC B2B Expert</text>
+  <text x="420" y="434" text-anchor="middle" font-size="9" fill="#64748b">features → SF capability assessment</text>
+
+  <line x1="212" y1="420" x2="308" y2="420" stroke="#475569" stroke-width="1.2" marker-end="url(#a1)"/>
+
+  <rect x="640" y="400" width="220" height="36" rx="5" fill="#fef2f2" stroke="#fca5a5" filter="url(#s1)"/>
+  <text x="750" y="423" text-anchor="middle" font-size="10" font-weight="600" fill="#991b1b">Capability Assessments</text>
+
+  <line x1="532" y1="422" x2="638" y2="418" stroke="#475569" stroke-width="1.2" marker-end="url(#a1)"/>
+
+  <rect x="910" y="400" width="130" height="36" rx="4" fill="#fef2f2" stroke="#fca5a5"/>
+  <text x="975" y="423" text-anchor="middle" font-size="9" font-weight="600" fill="#991b1b">Gap Analyst</text>
+  <line x1="862" y1="418" x2="908" y2="418" stroke="#475569" stroke-width="1" marker-end="url(#a1)"/>
+
+  <line x1="30" y1="468" x2="1070" y2="468" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Row 4: UI Migration -->
+  <rect x="310" y="478" width="220" height="44" rx="8" fill="#fff" stroke="#0891b2" stroke-width="2" filter="url(#s1)"/>
+  <text x="420" y="498" text-anchor="middle" font-size="12" font-weight="700" fill="#155e75">UI Migration</text>
+  <text x="420" y="512" text-anchor="middle" font-size="9" fill="#64748b">components → LWC mapping</text>
+
+  <rect x="640" y="480" width="220" height="36" rx="5" fill="#ecfeff" stroke="#67e8f9" filter="url(#s1)"/>
+  <text x="750" y="503" text-anchor="middle" font-size="10" font-weight="600" fill="#155e75">ui-migration-map.md</text>
+  <line x1="532" y1="500" x2="638" y2="498" stroke="#475569" stroke-width="1.2" marker-end="url(#a1)"/>
+
+  <rect x="910" y="480" width="130" height="36" rx="4" fill="#fef2f2" stroke="#fca5a5"/>
+  <text x="975" y="503" text-anchor="middle" font-size="9" font-weight="600" fill="#991b1b">Gap Analyst</text>
+  <line x1="862" y1="498" x2="908" y2="498" stroke="#475569" stroke-width="1" marker-end="url(#a1)"/>
+
+  <!-- Row 5: Integration -->
+  <rect x="310" y="534" width="220" height="44" rx="8" fill="#fff" stroke="#ea580c" stroke-width="2" filter="url(#s1)"/>
+  <text x="420" y="554" text-anchor="middle" font-size="12" font-weight="700" fill="#9a3412">Integration/API</text>
+  <text x="420" y="568" text-anchor="middle" font-size="9" fill="#64748b">ext. systems → SF architecture</text>
+
+  <rect x="640" y="538" width="220" height="36" rx="5" fill="#fff7ed" stroke="#fdba74" filter="url(#s1)"/>
+  <text x="750" y="561" text-anchor="middle" font-size="10" font-weight="600" fill="#9a3412">integration-assessment.md</text>
+  <line x1="532" y1="556" x2="638" y2="556" stroke="#475569" stroke-width="1.2" marker-end="url(#a1)"/>
+
+  <rect x="910" y="538" width="130" height="36" rx="4" fill="#fef2f2" stroke="#fca5a5"/>
+  <text x="975" y="561" text-anchor="middle" font-size="9" font-weight="600" fill="#991b1b">Gap Analyst</text>
+  <line x1="862" y1="556" x2="908" y2="556" stroke="#475569" stroke-width="1" marker-end="url(#a1)"/>
+
+  <!-- Row 6: Data Schema -->
+  <rect x="310" y="590" width="220" height="44" rx="8" fill="#fff" stroke="#7c3aed" stroke-width="2" filter="url(#s1)"/>
+  <text x="420" y="610" text-anchor="middle" font-size="12" font-weight="700" fill="#5b21b6">Data Schema</text>
+  <text x="420" y="624" text-anchor="middle" font-size="9" fill="#64748b">current model → SF objects</text>
+
+  <rect x="640" y="594" width="220" height="36" rx="5" fill="#f5f3ff" stroke="#c4b5fd" filter="url(#s1)"/>
+  <text x="750" y="617" text-anchor="middle" font-size="10" font-weight="600" fill="#5b21b6">data-schema-mapping.md</text>
+  <line x1="532" y1="612" x2="638" y2="612" stroke="#475569" stroke-width="1.2" marker-end="url(#a1)"/>
+
+  <rect x="910" y="594" width="130" height="36" rx="4" fill="#fef2f2" stroke="#fca5a5"/>
+  <text x="975" y="617" text-anchor="middle" font-size="9" font-weight="600" fill="#991b1b">Gap Analyst</text>
+  <line x1="862" y1="612" x2="908" y2="612" stroke="#475569" stroke-width="1" marker-end="url(#a1)"/>
+
+  <line x1="30" y1="648" x2="1070" y2="648" stroke="#dc2626" stroke-width="1.5"/>
+
+  <!-- Gap Analysis Final -->
+  <rect x="310" y="662" width="220" height="54" rx="10" fill="#dc2626" filter="url(#s1)"/>
+  <text x="420" y="686" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">Gap Analyst</text>
+  <text x="420" y="702" text-anchor="middle" font-size="9" fill="#fecaca">synthesize all inputs</text>
+
+  <rect x="640" y="662" width="310" height="54" rx="8" fill="#fff" stroke="#dc2626" stroke-width="2.5" filter="url(#s1)"/>
+  <text x="795" y="684" text-anchor="middle" font-size="13" font-weight="700" fill="#991b1b">gap-analysis-bbc-merchtank.md</text>
+  <text x="795" y="702" text-anchor="middle" font-size="10" fill="#64748b">Final deliverable — workflow-based, client-specific</text>
+
+  <line x1="532" y1="688" x2="638" y2="688" stroke="#dc2626" stroke-width="2" marker-end="url(#a-red)"/>
+
+  <!-- Label: all agents feed gap analyst -->
+  <text x="50" y="690" font-size="10" font-weight="600" fill="#991b1b">All agents converge →</text>
+</svg>

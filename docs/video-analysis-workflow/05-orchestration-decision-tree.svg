@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#475569"/>
+    </marker>
+    <filter id="sh" x="-4%" y="-4%" width="108%" height="112%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <rect width="1000" height="620" fill="#f8fafc" rx="12"/>
+
+  <!-- Title -->
+  <text x="500" y="34" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">Orchestration Option Selector</text>
+  <text x="500" y="52" text-anchor="middle" font-size="12" fill="#64748b">Choose the right pipeline based on what artifacts you have</text>
+
+  <!-- Decision 1: What do you have? -->
+  <rect x="350" y="72" width="300" height="44" rx="22" fill="#1e40af" filter="url(#sh)"/>
+  <text x="500" y="96" text-anchor="middle" font-size="13" font-weight="600" fill="#fff">What input do you have?</text>
+
+  <!-- Branch: Raw Video -->
+  <line x1="420" y1="116" x2="200" y2="160" stroke="#475569" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="280" y="138" font-size="10" font-weight="600" fill="#475569">Raw video file</text>
+
+  <!-- Branch: Pre-extracted frames -->
+  <line x1="500" y1="116" x2="500" y2="160" stroke="#475569" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="500" y="144" text-anchor="middle" font-size="10" font-weight="600" fill="#475569">Frames + transcript</text>
+
+  <!-- Branch: Transcript only -->
+  <line x1="580" y1="116" x2="800" y2="160" stroke="#475569" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="720" y="138" font-size="10" font-weight="600" fill="#475569">Transcript only</text>
+
+  <!-- ===== RAW VIDEO BRANCH ===== -->
+  <rect x="80" y="165" width="240" height="44" rx="22" fill="#d97706" filter="url(#sh)"/>
+  <text x="200" y="189" text-anchor="middle" font-size="12" font-weight="600" fill="#fff">Need full frame analysis?</text>
+
+  <!-- Yes: Option F -->
+  <line x1="140" y1="209" x2="140" y2="260" stroke="#475569" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="118" y="238" font-size="10" font-weight="600" fill="#059669">Yes</text>
+
+  <rect x="40" y="265" width="200" height="100" rx="10" fill="#fff" stroke="#d97706" stroke-width="2" filter="url(#sh)"/>
+  <text x="140" y="288" text-anchor="middle" font-size="14" font-weight="700" fill="#92400e">Option F</text>
+  <text x="140" y="306" text-anchor="middle" font-size="10" fill="#374151">Full Pipeline from Raw Video</text>
+  <text x="140" y="322" text-anchor="middle" font-size="9" fill="#6b7280">Phase 0 → 1 → 2 → 3</text>
+  <text x="140" y="338" text-anchor="middle" font-size="8" fill="#6b7280">12 agents • Complete deliverable</text>
+  <text x="140" y="352" text-anchor="middle" font-size="8" fill="#d97706">Longest but most thorough</text>
+
+  <!-- No: Option G -->
+  <line x1="260" y1="209" x2="260" y2="260" stroke="#475569" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="270" y="238" font-size="10" font-weight="600" fill="#dc2626">No / fast triage</text>
+
+  <rect x="260" y="265" width="200" height="100" rx="10" fill="#fff" stroke="#d97706" stroke-width="2" filter="url(#sh)"/>
+  <text x="360" y="288" text-anchor="middle" font-size="14" font-weight="700" fill="#92400e">Option G</text>
+  <text x="360" y="306" text-anchor="middle" font-size="10" fill="#374151">Video → Transcript-Only</text>
+  <text x="360" y="322" text-anchor="middle" font-size="9" fill="#6b7280">Phase 0 → 2 (skip Phase 1)</text>
+  <text x="360" y="338" text-anchor="middle" font-size="8" fill="#6b7280">6 agents • Fast turnaround</text>
+  <text x="360" y="352" text-anchor="middle" font-size="8" fill="#d97706">Good for initial triage</text>
+
+  <!-- ===== PRE-EXTRACTED BRANCH ===== -->
+  <rect x="390" y="165" width="220" height="44" rx="22" fill="#3b82f6" filter="url(#sh)"/>
+  <text x="500" y="189" text-anchor="middle" font-size="12" font-weight="600" fill="#fff">Need frame analysis?</text>
+
+  <line x1="460" y1="209" x2="460" y2="260" stroke="#475569" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="438" y="238" font-size="10" font-weight="600" fill="#059669">Yes</text>
+
+  <!-- Option A -->
+  <rect x="460" y="265" width="180" height="80" rx="10" fill="#fff" stroke="#3b82f6" stroke-width="2" filter="url(#sh)"/>
+  <text x="550" y="288" text-anchor="middle" font-size="14" font-weight="700" fill="#1e40af">Option A</text>
+  <text x="550" y="306" text-anchor="middle" font-size="10" fill="#374151">Parallel Frame Analysis</text>
+  <text x="550" y="322" text-anchor="middle" font-size="9" fill="#6b7280">Phase 1 only • 6 agents</text>
+  <text x="550" y="336" text-anchor="middle" font-size="8" fill="#3b82f6">Then run B or C</text>
+
+  <line x1="540" y1="209" x2="540" y2="260" stroke="#475569" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="560" y="238" font-size="10" font-weight="600" fill="#dc2626">No</text>
+
+  <!-- Options B and C -->
+  <rect x="460" y="370" width="180" height="80" rx="10" fill="#fff" stroke="#059669" stroke-width="2" filter="url(#sh)"/>
+  <text x="550" y="393" text-anchor="middle" font-size="14" font-weight="700" fill="#166534">Option B / C</text>
+  <text x="550" y="411" text-anchor="middle" font-size="10" fill="#374151">Full Analysis Team</text>
+  <text x="550" y="427" text-anchor="middle" font-size="9" fill="#6b7280">Phase 1+2 or Phase 2 only</text>
+  <text x="550" y="441" text-anchor="middle" font-size="8" fill="#059669">B = analysis, C = combined</text>
+  <line x1="550" y1="345" x2="550" y2="368" stroke="#475569" stroke-width="1.2" marker-end="url(#arr)"/>
+
+  <!-- ===== TRANSCRIPT ONLY BRANCH ===== -->
+  <rect x="700" y="165" width="220" height="44" rx="22" fill="#059669" filter="url(#sh)"/>
+  <text x="810" y="189" text-anchor="middle" font-size="12" font-weight="600" fill="#fff">Need Confluence export?</text>
+
+  <line x1="770" y1="209" x2="720" y2="260" stroke="#475569" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="728" y="238" font-size="10" font-weight="600" fill="#dc2626">No</text>
+
+  <!-- Option D -->
+  <rect x="640" y="265" width="180" height="80" rx="10" fill="#fff" stroke="#059669" stroke-width="2" filter="url(#sh)"/>
+  <text x="730" y="288" text-anchor="middle" font-size="14" font-weight="700" fill="#166534">Option D</text>
+  <text x="730" y="306" text-anchor="middle" font-size="10" fill="#374151">Transcript-Only Analysis</text>
+  <text x="730" y="322" text-anchor="middle" font-size="9" fill="#6b7280">Phase 2 only • 4 agents</text>
+  <text x="730" y="336" text-anchor="middle" font-size="8" fill="#059669">Fastest path to gap analysis</text>
+
+  <line x1="850" y1="209" x2="900" y2="260" stroke="#475569" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="890" y="238" font-size="10" font-weight="600" fill="#059669">Yes</text>
+
+  <!-- Option E -->
+  <rect x="820" y="265" width="180" height="80" rx="10" fill="#fff" stroke="#7c3aed" stroke-width="2" filter="url(#sh)"/>
+  <text x="910" y="288" text-anchor="middle" font-size="14" font-weight="700" fill="#6b21a8">Option E</text>
+  <text x="910" y="306" text-anchor="middle" font-size="10" fill="#374151">Transcript → Confluence</text>
+  <text x="910" y="322" text-anchor="middle" font-size="9" fill="#6b7280">Phase 2 + 3 • 5 agents</text>
+  <text x="910" y="336" text-anchor="middle" font-size="8" fill="#7c3aed">Direct to Jira/Confluence</text>
+
+  <!-- Bottom summary box -->
+  <rect x="80" y="470" width="840" height="130" rx="10" fill="#fff" stroke="#e5e7eb" filter="url(#sh)"/>
+  <text x="500" y="494" text-anchor="middle" font-size="13" font-weight="700" fill="#0f172a">Quick Reference — Pipeline Phases per Option</text>
+
+  <g transform="translate(100, 510)">
+    <!-- Header row -->
+    <text x="0" y="0" font-size="10" font-weight="600" fill="#374151">Option</text>
+    <text x="130" y="0" font-size="10" font-weight="600" fill="#374151">Phase 0</text>
+    <text x="260" y="0" font-size="10" font-weight="600" fill="#374151">Phase 1</text>
+    <text x="390" y="0" font-size="10" font-weight="600" fill="#374151">Phase 2</text>
+    <text x="520" y="0" font-size="10" font-weight="600" fill="#374151">Phase 3</text>
+    <text x="650" y="0" font-size="10" font-weight="600" fill="#374151">Agents</text>
+
+    <!-- Option rows -->
+    <text x="0" y="18" font-size="9" font-weight="600" fill="#92400e">F — Full Pipeline</text>
+    <rect x="130" y="10" width="50" height="12" rx="3" fill="#fef3c7" stroke="#f59e0b"/>
+    <rect x="260" y="10" width="50" height="12" rx="3" fill="#dbeafe" stroke="#93c5fd"/>
+    <rect x="390" y="10" width="50" height="12" rx="3" fill="#dcfce7" stroke="#86efac"/>
+    <rect x="520" y="10" width="50" height="12" rx="3" fill="#f3e8ff" stroke="#c084fc"/>
+    <text x="650" y="18" font-size="9" fill="#6b7280">~12</text>
+
+    <text x="0" y="36" font-size="9" font-weight="600" fill="#92400e">G — Video → Transcript</text>
+    <rect x="130" y="28" width="50" height="12" rx="3" fill="#fef3c7" stroke="#f59e0b"/>
+    <rect x="260" y="28" width="50" height="12" rx="3" fill="#f1f5f9" stroke="#e2e8f0"/>
+    <rect x="390" y="28" width="50" height="12" rx="3" fill="#dcfce7" stroke="#86efac"/>
+    <rect x="520" y="28" width="50" height="12" rx="3" fill="#f1f5f9" stroke="#e2e8f0"/>
+    <text x="650" y="36" font-size="9" fill="#6b7280">~6</text>
+
+    <text x="0" y="54" font-size="9" font-weight="600" fill="#1e40af">A — Frame Analysis</text>
+    <rect x="130" y="46" width="50" height="12" rx="3" fill="#f1f5f9" stroke="#e2e8f0"/>
+    <rect x="260" y="46" width="50" height="12" rx="3" fill="#dbeafe" stroke="#93c5fd"/>
+    <rect x="390" y="46" width="50" height="12" rx="3" fill="#f1f5f9" stroke="#e2e8f0"/>
+    <rect x="520" y="46" width="50" height="12" rx="3" fill="#f1f5f9" stroke="#e2e8f0"/>
+    <text x="650" y="54" font-size="9" fill="#6b7280">6</text>
+
+    <text x="0" y="72" font-size="9" font-weight="600" fill="#166534">C — Combined A+B</text>
+    <rect x="130" y="64" width="50" height="12" rx="3" fill="#f1f5f9" stroke="#e2e8f0"/>
+    <rect x="260" y="64" width="50" height="12" rx="3" fill="#dbeafe" stroke="#93c5fd"/>
+    <rect x="390" y="64" width="50" height="12" rx="3" fill="#dcfce7" stroke="#86efac"/>
+    <rect x="520" y="64" width="50" height="12" rx="3" fill="#f1f5f9" stroke="#e2e8f0"/>
+    <text x="650" y="72" font-size="9" fill="#6b7280">~11</text>
+
+    <text x="0" y="90" font-size="9" font-weight="600" fill="#166534">D — Transcript Only</text>
+    <rect x="130" y="82" width="50" height="12" rx="3" fill="#f1f5f9" stroke="#e2e8f0"/>
+    <rect x="260" y="82" width="50" height="12" rx="3" fill="#f1f5f9" stroke="#e2e8f0"/>
+    <rect x="390" y="82" width="50" height="12" rx="3" fill="#dcfce7" stroke="#86efac"/>
+    <rect x="520" y="82" width="50" height="12" rx="3" fill="#f1f5f9" stroke="#e2e8f0"/>
+    <text x="650" y="90" font-size="9" fill="#6b7280">4</text>
+  </g>
+</svg>
