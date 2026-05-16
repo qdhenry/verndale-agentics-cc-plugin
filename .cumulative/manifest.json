@@ -1,6 +1,6 @@
 {
   "$schema": "https://schemas.cumulative.dev/plugin/v1.json",
-  "id": "verndal.client-wiki-manager",
+  "id": "cumulative.wiki-ingest-cc-plugin",
   "type": "tool",
   "version": "1.0.0",
   "label": "Client Wiki Manager",
