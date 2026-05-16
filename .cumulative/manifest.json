@@ -13,15 +13,27 @@
   "tenancy": {
     "tier": "tenant-scoped",
     "dataAccess": [
-      { "service": "audit-svc", "scopes": ["events:write"] }
+      {
+        "service": "audit-svc",
+        "scopes": [
+          "events:write"
+        ]
+      }
     ]
   },
   "permissions": {
-    "shell": ["audit:write"],
+    "shell": [
+      "audit:write"
+    ],
     "browser": [],
     "egress": [],
     "dataAccess": [
-      { "service": "audit-svc", "scopes": ["events:write"] }
+      {
+        "service": "audit-svc",
+        "scopes": [
+          "events:write"
+        ]
+      }
     ]
   },
   "defaultAccess": {
@@ -41,10 +53,27 @@
   },
   "command": {
     "label": "Client Wiki Manager",
-    "keywords": ["wiki", "client", "verndale", "gap-analysis", "confluence"],
+    "keywords": [
+      "wiki",
+      "client",
+      "verndale",
+      "gap-analysis",
+      "confluence"
+    ],
     "action": {
       "kind": "deep-link",
       "value": "meta://search?q=client-wiki"
     }
+  },
+  "runtime": {
+    "kind": "luigi-iframe",
+    "viewUrl": "http://localhost:5000",
+    "csp": "default-src 'self'",
+    "sandbox": [
+      "allow-scripts",
+      "allow-forms",
+      "allow-downloads",
+      "allow-pointer-lock"
+    ]
   }
 }
