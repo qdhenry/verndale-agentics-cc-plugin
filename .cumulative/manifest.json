@@ -72,8 +72,7 @@
     "sandbox": [
       "allow-scripts",
       "allow-forms",
-      "allow-downloads",
-      "allow-pointer-lock"
+      "allow-downloads"
     ]
   }
 }
