@@ -27,14 +27,7 @@
     ],
     "browser": [],
     "egress": [],
-    "dataAccess": [
-      {
-        "service": "audit-svc",
-        "scopes": [
-          "events:write"
-        ]
-      }
-    ]
+    "dataAccess": []
   },
   "defaultAccess": {
     "byPersona": {
